@@ -120,11 +120,11 @@ export default class AddList extends React.Component {
     }
     // 生命周期内 数据存储操作
     componentDidUpdate(){
-        sessionStorage.setItem("listArr",JSON.stringify(this.state.listArr));
+        localStorage.setItem("listArr",JSON.stringify(this.state.listArr));
     }
     UNSAFE_componentWillMount(){
-        if(sessionStorage.getItem('listArr')!==null){
-            let str:any=sessionStorage.getItem('listArr')
+        if(localStorage.getItem('listArr')!==null){
+            let str:any=localStorage.getItem('listArr')
             var listArr=JSON.parse(str)
             this.setState({
                 listArr
